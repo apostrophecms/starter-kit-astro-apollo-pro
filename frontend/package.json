@@ -1,5 +1,5 @@
 {
-  "name": "apollo-frontend",
+  "name": "apollo-pro-frontend",
   "type": "module",
   "description": "Astro frontend for the ApostropheCMS + Astro Apollo template",
   "version": "1.0.0",

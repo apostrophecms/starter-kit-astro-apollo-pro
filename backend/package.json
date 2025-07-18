@@ -1,5 +1,5 @@
 {
-  "name": "apollo-backend",
+  "name": "apollo-pro-backend",
   "version": "1.0.0",
   "description": "Apostrophe backend for the ApostropheCMS + Astro Apollo template",
   "main": "app.js",

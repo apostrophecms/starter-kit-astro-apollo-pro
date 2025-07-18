@@ -1,7 +1,7 @@
 {
-  "name": "combined-astro-starter-kit",
+  "name": "apollo-pro",
   "version": "1.0.0",
-  "description": "Combined ApostropheCMS plus Astro starter kit",
+  "description": "The base Apollo theme for ApostropheCMS+Astro with Pro features",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/apostrophecms/combined-astro-starter-kit.git"
+    "url": "git+https://github.com/apostrophecms/apollo-pro.git"
   },
   "keywords": [
     "astro",
@@ -31,9 +31,9 @@
   "author": "Apostrophe Technologies Inc.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/apostrophecms/combined-astro-starter-kit/issues"
+    "url": "https://github.com/apostrophecms/apollo-pro/issues"
   },
-  "homepage": "https://github.com/apostrophecms/combined-astro-starter-kit#readme",
+  "homepage": "https://github.com/apostrophecms/apollo-pro#readme",
   "dependencies": {
     "postcss-viewport-to-container-toggle": "^2.0.0"
   }
