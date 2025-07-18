@@ -2,8 +2,7 @@ import apostrophe from 'apostrophe';
 
 export default apostrophe({
   root: import.meta,
-  shortName: 'apollo',
-  bundles: [ '@bodonkey/stripe-payments-extension' ],
+  shortName: 'apollo-pro',
   modules: {
     // Apostrophe module configuration
     // *******************************
@@ -26,7 +25,19 @@ export default apostrophe({
     // Custom extensions
     // Make sure to set the `APOS_BASE_URL` environment variable to the base
     // URL of your Apostrophe site
+    // Needed for the @apostrophecms-pro/seo-assistant module
     '@apostrophecms/seo': {},
+
+    // Pro extensions
+    // '@apostrophecms-pro/advanced-permission-group': {},
+    // '@apostrophecms-pro/advanced-permission': {},
+    // '@apostrophecms-pro/automatic-translation': {},
+    // '@apostrophecms-pro/data-set': {},
+    // '@apostrophecms-pro/data-set-widget': {},
+    // '@apostrophecms-pro/document-versions': {},
+    // '@apostrophecms-pro/doc-template-library': {},
+    // '@apostrophecms-pro/palette' : {},
+    // '@apostrophecms-pro/signup': {},
 
     // pieces
     article: {},
@@ -43,8 +54,6 @@ export default apostrophe({
     'hero-widget': {},
     'link-widget': {},
     'slideshow-widget': {},
-    'rows-widget': {},
-    '@bodonkey/stripe-payment': {},
-    '@bodonkey/stripe-button-widget': {}
+    'rows-widget': {}
   }
 });
