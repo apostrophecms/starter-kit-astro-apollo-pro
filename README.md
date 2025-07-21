@@ -20,7 +20,6 @@ A production-ready template combining [ApostropheCMS](https://docs.apostrophecms
     - [Prerequisites](#prerequisites)
     - [Quick Start](#quick-start)
     - [Alternative: Empty Database Setup](#alternative-empty-database-setup)
-    - [Quick Reference](#quick-reference)
   - [Project Architecture](#project-architecture)
     - [How It Works](#how-it-works)
     - [Project Structure](#project-structure)
@@ -33,8 +32,10 @@ A production-ready template combining [ApostropheCMS](https://docs.apostrophecms
   - [Available Pro Modules](#available-pro-modules)
     - [🔐 Advanced Permissions](#-advanced-permissions)
     - [🌍 Translation \& Localization Suite](#-translation--localization-suite)
-    - [📊 Data Visualization \& Analytics](#-data-visualization--analytics)
+    - [🎨 Visual Design \& Customization](#-visual-design--customization)
+    - [🔍 SEO \& Performance Optimization](#-seo--performance-optimization)
     - [📝 Document Management \& Versioning](#-document-management--versioning)
+    - [📊 Data Visualization \& Analytics](#-data-visualization--analytics)
     - [👥 User Registration \& Management](#-user-registration--management)
   - [Getting Started with Pro Modules](#getting-started-with-pro-modules)
     - [1. Choose Your Modules](#1-choose-your-modules)
@@ -79,7 +80,7 @@ Overall, this project utilizes ApostropheCMS as a headless backend with Astro as
 
 ### Prerequisites
 **Required:**
-- Node.js v18 or later
+- Node.js v20 or later
 - MongoDB v6.0 or later (local server or Atlas). See the [ApostropheCMS documentation](https://docs.apostrophecms.org/guide/development-setup.html) for setup.
 
 **Windows Users:**
@@ -96,71 +97,49 @@ To simplify dependency management, this repository includes several root-level s
    npm install
    ```
 
-2. **Load starter content** (recommended)
+2. **Load starter content** (optional, but recommended)
    ```bash
    npm run load-starter-content
    ```
    This fetches a starter database and media files. You'll be prompted to set an admin password.
 
 3. **Set up environment variables**
-   Both projects need an `APOS_EXTERNAL_FRONT_KEY` environment variable set to the same value for authentication:
+   Both projects need an `APOS_EXTERNAL_FRONT_KEY` environment variable set to the same value for authentication. Open two terminals:
+   - **Mac/Linux users**: One terminal in `frontend` folder, one in `backend` folder
+   - **Windows users**: WSL terminal for `backend` folder, WSL or Windows terminal for `frontend` folder
+
    ```bash
    # In both terminal windows
    export APOS_EXTERNAL_FRONT_KEY=my-secret-key
    ```
-   
+
    The `astro.config.mjs` file uses default values, but if running the backend on a different port, also set:
    ```bash
    export APOS_HOST=your-backend-url
    ```
 
 4. **Start development servers**
-   Open two terminals:
-   - **Mac/Linux users**: One terminal in `frontend` folder, one in `backend` folder
-   - **Windows users**: WSL terminal for `backend` folder, WSL or Windows terminal for `frontend` folder
-   
+
    ```bash
    # Terminal 1 - Backend (use WSL on Windows)
    cd backend && npm run dev
-   
-   # Terminal 2 - Frontend  
+
+   # Terminal 2 - Frontend
    cd frontend && npm run dev
    ```
 
-Your site will be available at `http://localhost:4321` (Astro frontend) with the admin interface at `http://localhost:3000` (ApostropheCMS backend).
+Your site will be available at `http://localhost:4321` (Astro frontend). The ApostropheCMS backend will be available at `http://localhost:3000`, but it just gives notification of whether it is connected to the Astro frontend. In most cases you never need to access this page.
 
 > **Note:** Astro is less stringent about project setup in development mode. Before deployment, run `npm run build` followed by `npm run preview` in the `frontend` folder to test production behavior. We don't recommend using the root `npm run serve-frontend` script during development - it's used for Apostrophe hosting.
 
 ### Alternative: Empty Database Setup
-If you prefer to start with an empty database instead of the starter content:
+If you prefer to start with an empty database instead of the starter content you will need to add an admin user:
 
 ```bash
 cd backend
 node app @apostrophecms/user:add admin admin
 ```
-
-### Quick Reference
-
-**Development URLs:**
-- Frontend: http://localhost:4321 (your public site)
-- Admin: http://localhost:3000 (content management)
-
-**Key Commands:**
-```bash
-# Root directory
-npm install          # Install all dependencies
-npm run build        # Build both projects
-npm run update       # Update all dependencies
-
-# Backend directory  
-npm run dev          # Start ApostropheCMS server
-node app @apostrophecms/user:add admin admin  # Add admin user
-
-# Frontend directory
-npm run dev          # Start Astro dev server
-npm run build        # Build for production
-npm run preview      # Preview production build
-```
+This creates a user named `admin` with the correct privileges. You will be asked to enter a password.
 
 ---
 
@@ -199,8 +178,7 @@ If you've worked with ApostropheCMS previously, the backend should look familiar
 **Key differences:**
 - **No frontend code in modules** - Client-side JavaScript, styling, and templates go in the Astro project instead
 - **No template helpers** - Skip `helper()`, `extendHelpers()`, `components()`, and `renderRoutes()` functions
-- **Schema sharing** - Widget schemas are moved to `lib/schema-mixins` for reuse between widgets and pages
-- **Fallback homepage** - `modules/@apostrophecms/home-page` provides a simple fallback that redirects users to the Astro frontend
+- **Schema sharing** - Some widget schemas have been moved to `lib/schema-mixins` for reuse between widgets and pages
 
 The `modules/@apostrophecms/home-page` module loads the core `views/layout.html` file, which has been modified to show project status information instead of the Admin UI.
 
@@ -272,12 +250,10 @@ Take control of your content with granular permissions that go far beyond basic 
 ### 🌍 Translation & Localization Suite
 **Automated translation and localization management for global content**
 
-Expand your reach globally with powerful translation tools that streamline multilingual content management. Perfect for international businesses and organizations serving diverse audiences.
+While ApostropheCMS includes built-in content localization for managing multilingual sites, these Pro modules supercharge your international workflow with automated translation capabilities. Perfect for international businesses and organizations serving diverse audiences who need to scale their multilingual content efficiently.
 
 - **Automatic Translation** - AI-powered translation with support for DeepL, Google Translate, and Azure Translator
 - **Import/Export Translations** - Manage translation workflows with professional translators
-- **SEO Assistant** - Optimize multilingual content for search engines automatically
-- Support for 100+ languages with professional-grade accuracy
 - Seamless integration with your existing content workflow
 
 ```javascript
@@ -293,10 +269,63 @@ Expand your reach globally with powerful translation tools that streamline multi
 // '@apostrophecms-pro/automatic-translation-google': {},
 // '@apostrophecms-pro/automatic-translation-azure': {},
 '@apostrophecms-pro/import-export-translation': {},
-'@apostrophecms/seo-assistant': {},
 ```
 
-[Learn more about Automatic Translation →](https://apostrophecms.com/extensions/automatic-translation) and [SEO Assistant →](https://apostrophecms.com/extensions/seo-assistant)
+[Learn more about Automatic Translation →](https://apostrophecms.com/extensions/automatic-translation)
+
+---
+
+### 🎨 Visual Design & Customization
+**In-context design tools for real-time visual customization**
+
+Empower content editors and designers to customize the visual appearance of your site without touching code. Perfect for agencies, white-label solutions, and sites that need flexible theming capabilities.
+
+- **Palette** - In-context interface for changing CSS properties in real-time
+- Create custom color schemes, spacing, typography, and visual effects
+- Group controls into intuitive tabs and sections for organized editing
+- Support for CSS custom properties and media queries
+- Changes render instantly with browser-side caching for performance
+
+``` javascript
+'@apostrophecms-pro/palette': {},
+```
+
+[Learn more about Palette →](https://apostrophecms.com/extensions/palette-extension)
+
+---
+
+### 🔍 SEO & Performance Optimization
+**Automated SEO optimization for better search visibility**
+
+Enhance your content's search engine performance with intelligent optimization tools that work across all languages and content types.
+
+- **SEO Assistant** - Optimize content for search engines automatically
+- Works seamlessly with multilingual content for comprehensive international SEO
+- Automated suggestions and improvements for better rankings
+
+``` javascript
+'@apostrophecms-pro/seo-assistant': {},
+```
+
+[Learn more about SEO Assistant →](https://apostrophecms.com/extensions/seo-assistant)
+
+---
+### 📝 Document Management & Versioning
+**Professional document lifecycle management**
+
+Maintain complete control over your content lifecycle with enterprise-grade versioning and template management. Essential for organizations with strict content governance requirements.
+
+- **Document Versions** - Track changes, compare revisions, and restore previous versions
+- **Document Template Library** - Create reusable templates for consistent content creation
+- Audit trails for compliance and accountability
+- Perfect for content teams with review and approval workflows
+
+```javascript
+'@apostrophecms-pro/document-versions': {},
+'@apostrophecms-pro/doc-template-library': {},
+```
+
+[Learn more about Document Versions →](https://apostrophecms.com/extensions/document-version) and the [Template Library →](https://apostrophecms.com/extensions/template-library)
 
 ---
 
@@ -318,25 +347,6 @@ Turn your data into compelling visual stories with professional charting and vis
 
 ---
 
-### 📝 Document Management & Versioning
-**Professional document lifecycle management**
-
-Maintain complete control over your content lifecycle with enterprise-grade versioning and template management. Essential for organizations with strict content governance requirements.
-
-- **Document Versions** - Track changes, compare revisions, and restore previous versions
-- **Document Template Library** - Create reusable templates for consistent content creation
-- Audit trails for compliance and accountability
-- Perfect for content teams with review and approval workflows
-
-```javascript
-'@apostrophecms-pro/document-versions': {},
-'@apostrophecms-pro/doc-template-library': {},
-```
-
-[Learn more about Document Versions →](https://apostrophecms.com/extensions/document-version) and the [Template Library →](https://apostrophecms.com/extensions/template-library)
-
----
-
 ### 👥 User Registration & Management
 **Self-service user registration and account management**
 
@@ -353,6 +363,8 @@ Enable public user registration and self-service account management for member s
 ```
 
 [Learn more about User Management →](https://apostrophecms.com/extensions/account-signup)
+
+---
 
 ## Getting Started with Pro Modules
 
