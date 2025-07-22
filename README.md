@@ -88,7 +88,7 @@ Overall, this project utilizes ApostropheCMS as a headless backend with Astro as
 
 ### Prerequisites
 **Required:**
-- Node.js v20 or later
+- Node.js v22 or later
 - MongoDB v6.0 or later (local server or Atlas). See the [ApostropheCMS documentation](https://docs.apostrophecms.org/guide/development-setup.html) for setup.
 
 **Windows Users:**
@@ -184,7 +184,7 @@ If you've worked with ApostropheCMS previously, the backend should look familiar
 - Most [module configuration settings](https://docs.apostrophecms.org/reference/module-api/module-overview.html#module-configuration) for Admin UI, request routing, and MongoDB interaction
 
 **Key differences:**
-- **No frontend code in modules** - Client-side JavaScript, styling, and templates go in the Astro project instead
+- **No frontend code in modules** - Stylesheets, templates (implemented as Astro components), and client-side JavaScript go in the Astro project instead
 - **No template helpers** - Skip `helper()`, `extendHelpers()`, `components()`, and `renderRoutes()` functions
 - **Schema sharing** - Some widget schemas have been moved to `lib/schema-mixins` for reuse between widgets and pages
 
@@ -629,7 +629,7 @@ Apostrophe hosting will automatically handle:
 - Automatic backups
 - Security updates
 
-In the future, we will be providing a path to create your own account and create a new hosted project. In the meantime, you can [contact us](https://apostrophecms.com/contact-us) to get your hosting set up.
+In the future, we will be providing a path to create your own account and create a new hosted project. In the meantime, you can [learn more](https://apostrophecms.com/hosting) and [contact us](https://apostrophecms.com/contact-us) to get your hosting set up.
 
 ### Using 3rd-party hosting
 
