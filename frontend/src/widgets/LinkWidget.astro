@@ -28,11 +28,6 @@ const ALIGNMENT_MAP = {
 
 const { widget } = Astro.props;
 
-// Input validation
-if (!widget?.linkType || !widget?.linkText) {
-  throw new Error('Link widget requires linkType and linkText properties');
-}
-
 // Determine the link path based on type
 const path = (() => {
   switch (widget.linkType) {

@@ -54,6 +54,7 @@
     "@apostrophecms-pro/document-versions": "^2.5.1",
     "@apostrophecms-pro/palette": "github:apostrophecms/palette#PRO-8064-inject-nodes",
     "@apostrophecms-pro/seo-assistant": "^1.2.1",
+    "@apostrophecms/favicon": "github:apostrophecms/favicon#PRO-8077-inject-nodes",
     "@apostrophecms/mongodb-snapshot": "^1.1.0",
     "@apostrophecms/open-graph": "github:apostrophecms/open-graph#PRO-8066-inject-nodes",
     "@apostrophecms/seo": "github:apostrophecms/seo#PRO-8065-inject-nodes",

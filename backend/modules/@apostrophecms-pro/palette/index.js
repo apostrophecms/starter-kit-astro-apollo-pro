@@ -5,7 +5,7 @@ export default {
         type: 'color',
         label: 'Page Background',
         selector: 'body',
-        property: 'color'
+        property: 'background-color'
       }
     },
     group: {
