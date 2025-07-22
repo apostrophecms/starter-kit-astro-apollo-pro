@@ -1,5 +1,13 @@
 # Apollo Pro Template for ApostropheCMS + Astro Integration
 
+> **⚠️ This is the Pro version with paid features**
+>
+> This template includes **ApostropheCMS Pro modules** which require a paid license. If you're just getting started:
+>
+> - **Try the free version first**: Check out our [open source starter kit](https://github.com/apostrophecms/apollo) - it's completely free and perfect for building amazing websites
+> - **Ready for Pro features?** [Get a Pro license](https://apostrophecms.com/contact-sales) and continue with this starter kit for enterprise-grade features
+
+A production-ready template combining [ApostropheCMS](https://docs.apostrophecms.org/) as a headless backend with [Astro](https://astro.build/) as a modern frontend framework...
 A production-ready template combining [ApostropheCMS](https://docs.apostrophecms.org/) as a headless backend with [Astro](https://astro.build/) as a modern frontend framework. This template includes **all ApostropheCMS Pro modules** pre-installed, giving you enterprise-grade features out of the box.
 
 ## What Makes This Special
