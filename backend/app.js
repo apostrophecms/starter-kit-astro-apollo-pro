@@ -98,5 +98,6 @@ export default apostrophe({
 
     // '@apostrophecms-pro/document-versions': {},
     // '@apostrophecms-pro/doc-template-library': {},
+    '@apostrophecms-pro/palette': {}
   }
 });
