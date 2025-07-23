@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -z "$APOS_MONGODB_URI" ]; then
-  APOS_MONGODB_URI="mongodb://localhost:27017/apollo"
+  APOS_MONGODB_URI="mongodb://localhost:27017/apollo-pro"
 fi
 
 curl -o /tmp/starter-database.snapshot https://static.apostrophecms.com/apollo/starter-database.snapshot &&
@@ -10,4 +10,5 @@ curl -o /tmp/starter-uploads.tar https://static.apostrophecms.com/apollo/starter
 mkdir -p public/uploads &&
 (cd public/uploads && tar -xf /tmp/starter-uploads.tar) &&
 echo "Starter content loaded. Now set an admin password." &&
-node app @apostrophecms/user:add admin admin
+node app @apostrophecms-pro/advanced-permission-group:add-admin admin &&
+node app @apostrophecms/user:add admin --group=admin
