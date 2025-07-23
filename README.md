@@ -7,7 +7,6 @@
 > - **Try the free version first**: Check out our [open source starter kit](https://github.com/apostrophecms/apollo) - it's completely free and perfect for building amazing websites
 > - **Ready for Pro features?** [Get a Pro license](https://apostrophecms.com/contact-sales) and continue with this starter kit for enterprise-grade features
 
-A production-ready template combining [ApostropheCMS](https://docs.apostrophecms.org/) as a headless backend with [Astro](https://astro.build/) as a modern frontend framework...
 A production-ready template combining [ApostropheCMS](https://docs.apostrophecms.org/) as a headless backend with [Astro](https://astro.build/) as a modern frontend framework. This template includes **all ApostropheCMS Pro modules** pre-installed, giving you enterprise-grade features out of the box.
 
 ## What Makes This Special
@@ -92,7 +91,7 @@ Overall, this project utilizes ApostropheCMS as a headless backend with Astro as
 - MongoDB v6.0 or later (local server or Atlas). See the [ApostropheCMS documentation](https://docs.apostrophecms.org/guide/development-setup.html) for setup.
 
 **Windows Users:**
-- Windows Subsystem for Linux 2 (WSL2) required for Apostrophe development. This ensures consistent behavior with image processing tools and file system operations. [Learn more about setting up WSL2](https://learn.microsoft.com/en-us/windows/wsl/install).
+- Windows Subsystem for Linux 2 (WSL2) required for Apostrophe development. This ensures consistent behavior with image processing tools and file system operations. Learn more about setting up WSL2 from [Microsoft](https://learn.microsoft.com/en-us/windows/wsl/install) and in our [documentation](https://docs.apostrophecms.org/cookbook/windows-development.html).
 
 ### Quick Start
 
@@ -121,7 +120,7 @@ To simplify dependency management, this repository includes several root-level s
    export APOS_EXTERNAL_FRONT_KEY=my-secret-key
    ```
 
-   The `astro.config.mjs` file uses default values, but if running the backend on a different port, also set:
+   The `astro.config.mjs` file uses default values, but if running the backend on a different server and/or port, also set:
    ```bash
    export APOS_HOST=your-backend-url
    ```
@@ -141,7 +140,7 @@ Your site will be available at `http://localhost:4321` (Astro frontend). The Apo
 > **Note:** Astro is less stringent about project setup in development mode. Before deployment, run `npm run build` followed by `npm run preview` in the `frontend` folder to test production behavior. We don't recommend using the root `npm run serve-frontend` script during development - it's used for Apostrophe hosting.
 
 ### Alternative: Empty Database Setup
-If you prefer to start with an empty database instead of the starter content you will need to add an admin user:
+⚠️ If you prefer to start with an empty database instead of the starter content you will need to add an admin user:
 
 ```bash
 cd backend
@@ -158,17 +157,19 @@ This project utilizes ApostropheCMS as a headless backend with Astro as a fronte
 
 ### Project Structure
 ```
-├── backend/                 # ApostropheCMS application
-│   ├── modules/            # Custom modules (pages, pieces, widgets)
+├── backend/               # ApostropheCMS application
+│   ├── modules/           # Custom modules (pages, pieces, widgets)
 │   ├── app.js             # Main configuration
+│   ├── package.json       # ApostropheCMS-specific scripts
 │   └── ...
-├── frontend/               # Astro application  
+├── frontend/              # Astro application
 │   ├── src/
 │   │   ├── pages/         # Single [...slug].astro route
 │   │   ├── templates/     # Page templates
 │   │   ├── widgets/       # Widget templates
 │   │   └── components/    # Astro components
 │   ├── astro.config.mjs   # Astro configuration
+│   ├── package.json       # Astro-specific scripts
 │   └── ...
 └── README.md              # This file
 └── package.json.          # Whole project scripts
@@ -176,7 +177,7 @@ This project utilizes ApostropheCMS as a headless backend with Astro as a fronte
 
 ### For ApostropheCMS Developers
 
-If you've worked with ApostropheCMS previously, the backend should look familiar. Custom modules for pages, pieces, and widgets are in the `modules` folder, with core module configuration in `modules/@apostrophecms`. 
+If you've worked with ApostropheCMS previously, the backend should look familiar. Custom modules for pages, pieces, and widgets are in the `modules` folder, with core module configuration in `modules/@apostrophecms`.
 
 **What stays the same:**
 - Module registration in `app.js`
@@ -246,7 +247,7 @@ Take control of your content with granular permissions that go far beyond basic 
 - Ideal for enterprise workflows with multiple stakeholders and approval processes
 
 ```javascript
-// Uncomment both modules in app.js to enable
+
 '@apostrophecms-pro/advanced-permission-group': {},
 '@apostrophecms-pro/advanced-permission': {},
 ```
