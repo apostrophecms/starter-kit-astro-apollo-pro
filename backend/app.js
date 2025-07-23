@@ -142,12 +142,6 @@ export default apostrophe({
 
     '@apostrophecms-pro/signup': {},
 
-    /* ℹ️ Both Data Set and Data Set Widget are needed
-          for adding and visualizing csv data
-    */
-    '@apostrophecms-pro/data-set': {},
-    '@apostrophecms-pro/data-set-widget': {},
-
     '@apostrophecms-pro/document-versions': {},
     '@apostrophecms-pro/doc-template-library': {},
     '@apostrophecms-pro/palette': {}

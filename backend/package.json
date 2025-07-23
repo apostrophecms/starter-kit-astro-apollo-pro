@@ -50,7 +50,6 @@
   "dependencies": {
     "@apostrophecms-pro/advanced-permission": "^3.0.4",
     "@apostrophecms-pro/automatic-translation": "^1.4.2",
-    "@apostrophecms-pro/data-set": "^2.0.2",
     "@apostrophecms-pro/doc-template-library": "^2.2.5",
     "@apostrophecms-pro/document-versions": "^2.5.1",
     "@apostrophecms-pro/import-export-translation": "^1.0.3",
