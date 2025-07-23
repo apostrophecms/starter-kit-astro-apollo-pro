@@ -4,12 +4,13 @@
 >
 > This template includes **ApostropheCMS Pro modules** which require a paid license. If you're just getting started:
 >
-> - **Try the free version first**: Check out our [open source starter kit](https://github.com/apostrophecms/apollo) - it's completely free and perfect for building amazing websites
-> - **Ready for Pro features?** [Get a Pro license](https://apostrophecms.com/contact-sales) and continue with this starter kit for enterprise-grade features
+> - **Try the free version first**: Check out our [open source starter kit](https://github.com/apostrophecms/apollo) - it's completely free and perfect for building amazing websites.
+> - **Ready for Pro features?** [Get a Pro license](https://apostrophecms.com/contact-us) and continue with this starter kit for enterprise-grade features.
+> - **Want easy hosting for your project?** You can [learn more](https://apostrophecms.com/hosting) and [contact us](https://apostrophecms.com/contact-us) to get your hosting set up.
 
 A production-ready template combining [ApostropheCMS](https://docs.apostrophecms.org/) as a headless backend with [Astro](https://astro.build/) as a modern frontend framework. This template includes **all ApostropheCMS Pro modules** pre-installed, giving you enterprise-grade features out of the box.
 
-## What Makes This Special
+## ✨ What Makes This Special
 
 - **🚀 Headless CMS with Frontend Integration** - Full ApostropheCMS Admin UI with in-context editing
 - **⚡ Modern Frontend** - Astro for optimal performance and developer experience  
@@ -20,14 +21,14 @@ A production-ready template combining [ApostropheCMS](https://docs.apostrophecms
 ## Table of Contents
 <!-- TOC -->
 - [Apollo Pro Template for ApostropheCMS + Astro Integration](#apollo-pro-template-for-apostrophecms--astro-integration)
-  - [What Makes This Special](#what-makes-this-special)
+  - [✨ What Makes This Special](#-what-makes-this-special)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
-  - [Getting Started](#getting-started)
+  - [🚀 Getting Started](#-getting-started)
     - [Prerequisites](#prerequisites)
     - [Quick Start](#quick-start)
     - [Alternative: Empty Database Setup](#alternative-empty-database-setup)
-  - [Project Architecture](#project-architecture)
+  - [🏗️ Project Architecture](#️-project-architecture)
     - [How It Works](#how-it-works)
     - [Project Structure](#project-structure)
     - [For ApostropheCMS Developers](#for-apostrophecms-developers)
@@ -36,54 +37,50 @@ A production-ready template combining [ApostropheCMS](https://docs.apostrophecms
     - [Widget Flexibility](#widget-flexibility)
     - [Configuration Notes](#configuration-notes)
   - [🚀 Pro Modules](#-pro-modules)
-  - [Available Pro Modules](#available-pro-modules)
+  - [💎 Available Pro Modules](#-available-pro-modules)
     - [🔐 Advanced Permissions](#-advanced-permissions)
     - [🌍 Translation \& Localization Suite](#-translation--localization-suite)
     - [🎨 Visual Design \& Customization](#-visual-design--customization)
     - [🔍 SEO \& Performance Optimization](#-seo--performance-optimization)
     - [📝 Document Management \& Versioning](#-document-management--versioning)
-    - [📊 Data Visualization \& Analytics](#-data-visualization--analytics)
     - [👥 User Registration \& Management](#-user-registration--management)
-  - [Getting Started with Pro Modules](#getting-started-with-pro-modules)
-    - [1. Choose Your Modules](#1-choose-your-modules)
-    - [2. Uncomment in app.js](#2-uncomment-in-appjs)
-    - [3. Configure as Needed](#3-configure-as-needed)
-    - [4. Restart Your Application](#4-restart-your-application)
-  - [Features \& Widgets](#features--widgets)
+  - [⚡ Getting Started with Pro Modules](#-getting-started-with-pro-modules)
+  - [🌟 Features \& Widgets](#-features--widgets)
     - [Widgets](#widgets)
     - [Pieces](#pieces)
     - [Pages](#pages)
-  - [Image Helper Functions](#image-helper-functions)
+  - [🖼️ Image Helper Functions](#️-image-helper-functions)
     - [Overview](#overview)
     - [Working with Image Relationships](#working-with-image-relationships)
     - [Working with Direct Attachments](#working-with-direct-attachments)
     - [Image Cropping and Sizes](#image-cropping-and-sizes)
     - [Working with Focal Points](#working-with-focal-points)
     - [Core Functions Reference](#core-functions-reference)
-  - [Theming](#theming)
+  - [🖌️ Theming](#️-theming)
     - [Steps to Customize](#steps-to-customize)
     - [Example: Overriding Common Variables](#example-overriding-common-variables)
     - [Full List of Variables](#full-list-of-variables)
     - [Notes](#notes)
     - [Troubleshooting](#troubleshooting)
-  - [Package scripts](#package-scripts)
+  - [⚙️ Package scripts](#️-package-scripts)
     - [Root `package.json` scripts](#root-packagejson-scripts)
     - [Frontend folder scripts](#frontend-folder-scripts)
     - [Backend folder scripts](#backend-folder-scripts)
-  - [Deploying to production](#deploying-to-production)
-    - [Using Apostrophe hosting](#using-apostrophe-hosting)
-    - [Using 3rd-party hosting](#using-3rd-party-hosting)
+  - [🚀 Deploying to production](#-deploying-to-production)
+    - [**Using Apostrophe hosting (Recommended)**](#using-apostrophe-hosting-recommended)
+    - [**Using 3rd-party hosting**](#using-3rd-party-hosting)
       - [Backend (ApostropheCMS) Deployment](#backend-apostrophecms-deployment)
       - [Frontend (Astro) Deployment](#frontend-astro-deployment)
       - [Netlify Deployment Example](#netlify-deployment-example)
-  - [Need Help?](#need-help)
+  - [🚑 Need Help?](#-need-help)
+  - [📚 Learn More](#-learn-more)
   - [Licensing](#licensing)
 
 
 ## Introduction
 Overall, this project utilizes ApostropheCMS as a headless backend with Astro as a frontend. What sets this apart from the typical headless use of ApostropheCMS is the addition of a package, [apostrophe-astro](https://github.com/apostrophecms/apostrophe-astro) in the Astro frontend project. This allows for full use of the ApostropheCMS Admin UI, including in-context editing. At the same time, this package also largely automates and simplifies fetching content from the ApostropheCMS backend without writing REST API calls into your code.
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 **Required:**
@@ -150,7 +147,7 @@ This creates a user named `admin` with the correct privileges. You will be asked
 
 ---
 
-## Project Architecture
+## 🏗️ Project Architecture
 
 ### How It Works
 This project utilizes ApostropheCMS as a headless backend with Astro as a frontend. What sets this apart from typical headless setups is the [apostrophe-astro](https://github.com/apostrophecms/apostrophe-astro) package in the Astro frontend project. This enables full use of the ApostropheCMS Admin UI, including in-context editing, while largely automating content fetching from the backend without writing REST API calls.
@@ -202,8 +199,8 @@ The Astro portion follows standard conventions with components in `src` and asse
 
 **Key differences:**
 - **Single route system** - Instead of multiple routes in `pages`, there's one `[...slug].astro` file that handles all routing
-- **Template mapping** - Pages map to templates in the `templates` folder, corresponding to ApostropheCMS page types
-- **Widget system** - The `widgets` folder contains templates for ApostropheCMS widgets, mapped through `index.js` files
+- **Template mapping** - Pages map to templates in the `templates` folder, mapped by the `index.js` file in that folder. Each template corresponds to an ApostropheCMS page type, including `index.html` and `show.html` piece-page types
+- **Widget system** - The `widgets` folder contains templates for ApostropheCMS widgets, mapped through an `index.js` file in that folder.
 - **Required configuration** - The `apostrophe` integration and `output: 'server'` settings must remain for backend integration
 
 ### Routing and Templates
@@ -215,7 +212,9 @@ Unlike typical Astro projects with multiple route files, this project uses a sin
 3. Populates template content with data from the CMS
 4. Renders widgets using templates from the `widgets` folder
 
-Each template corresponds to a registered ApostropheCMS page or piece-page type. Content is populated by data from the CMS backend and inserted into slots in the main `[...slug].astro` file.
+Each page template corresponds to a registered ApostropheCMS page or piece-page type. Content is populated by data from the CMS backend and inserted into slots in the main `[...slug].astro` file. Widget data is handled through the mapped templates and added to page templates using the `AposArea` helper component.
+
+Read more in the [`apostrophe-astro` documentation](https://github.com/apostrophecms/apostrophe-astro)  or in the [Apollo tutorial series](https://docs.apostrophecms.org/tutorials/astro/apostrophecms-and-astro.html).
 
 ### Widget Flexibility
 
@@ -232,9 +231,9 @@ Read more in the [`apostrophe-astro` documentation](https://github.com/apostroph
 
 ## 🚀 Pro Modules
 
-This template includes all ApostropheCMS Pro modules pre-installed and ready to use. Simply uncomment the desired modules in your `app.js` file to enable powerful enterprise features that will accelerate your development and enhance your content management capabilities.
+This template includes the majority of ApostropheCMS Pro modules pre-installed and activated, giving you immediate access to powerful enterprise features that will accelerate your development and enhance your content management capabilities.
 
-## Available Pro Modules
+## 💎 Available Pro Modules
 
 ### 🔐 Advanced Permissions
 **Enterprise-grade access control for teams and organizations**
@@ -265,20 +264,20 @@ While ApostropheCMS includes built-in content localization for managing multilin
 - **Import/Export Translations** - Manage translation workflows with professional translators
 - Seamless integration with your existing content workflow
 
-```javascript
-// Choose your preferred translation provider
-'@apostrophecms-pro/automatic-translation': {
-  options: {
-    enabled: true,
-    provider: 'deepl' // or 'google', 'azure'
-  }
-},
-// Uncomment the corresponding provider
-'@apostrophecms-pro/automatic-translation-deepl': {},
-// '@apostrophecms-pro/automatic-translation-google': {},
-// '@apostrophecms-pro/automatic-translation-azure': {},
-'@apostrophecms-pro/import-export-translation': {},
+**Configuration**: These modules are automatically activated based on your environment variables. Set the appropriate API key for your preferred translation provider:
+
+```bash
+# For DeepL (recommended)
+APOS_DEEPL_API_SECRET=your_deepl_api_key
+
+# For Google Translate
+APOS_GOOGLE_API_SECRET=your_google_api_key
+
+# For Azure Translator
+APOS_AZURE_API_SECRET=your_azure_api_key
 ```
+
+The template will automatically enable the appropriate translation modules and configure the provider based on which API key you provide. If no translation API keys are set, only the manual import/export translation module will be available.
 
 [Learn more about Automatic Translation →](https://apostrophecms.com/extensions/automatic-translation)
 
@@ -308,13 +307,18 @@ Empower content editors and designers to customize the visual appearance of your
 
 Enhance your content's search engine performance with intelligent optimization tools that work across all languages and content types.
 
-- **SEO Assistant** - Optimize content for search engines automatically
+- **SEO Assistant** - AI-powered content optimization for search engines
 - Works seamlessly with multilingual content for comprehensive international SEO
 - Automated suggestions and improvements for better rankings
 
-``` javascript
-'@apostrophecms-pro/seo-assistant': {},
+**Configuration**: The SEO Assistant is automatically activated when you provide an OpenAI API key:
+
+```bash
+# Required for SEO Assistant
+OPENAI_API_KEY=your_openai_api_key
 ```
+
+The template will automatically enable the SEO Assistant modules and configure the OpenAI provider when this environment variable is set.
 
 [Learn more about SEO Assistant →](https://apostrophecms.com/extensions/seo-assistant)
 
@@ -338,24 +342,6 @@ Maintain complete control over your content lifecycle with enterprise-grade vers
 
 ---
 
-### 📊 Data Visualization & Analytics
-**Transform spreadsheets into interactive visualizations**
-
-Turn your data into compelling visual stories with professional charting and visualization tools. Perfect for dashboards, reports, and data-driven websites.
-
-- **Data Set Management** - Upload and manage CSV data with ease
-- **Data Set Widget** - Create tables out-of-the-box with support for additional visualization
-
-```javascript
-// Both modules required for full functionality
-'@apostrophecms-pro/data-set': {},
-'@apostrophecms-pro/data-set-widget': {},
-```
-
-[Learn more about Data Visualization →](https://apostrophecms.com/extensions/data-set)
-
----
-
 ### 👥 User Registration & Management
 **Self-service user registration and account management**
 
@@ -375,22 +361,14 @@ Enable public user registration and self-service account management for member s
 
 ---
 
-## Getting Started with Pro Modules
+## ⚡ Getting Started with Pro Modules
 
-### 1. Choose Your Modules
-Review the modules above and identify which ones align with your project requirements. Most modules work independently, but some have dependencies (noted in the code examples).
+Most Pro modules are automatically activated based on your environment configuration. Simply add any required API keys or configuration settings as environment variables, then restart your application.
 
-### 2. Uncomment in app.js
-Open your `app.js` file and uncomment the desired modules. Follow the configuration examples provided above.
+For detailed configuration options and requirements, refer to the README documentation for each individual module..
 
-### 3. Configure as Needed
-Some modules require additional configuration such as API keys for translation services or specific permission settings. Refer to the individual module documentation for detailed setup instructions.
-
-### 4. Restart Your Application
-After enabling modules, restart your ApostropheCMS application to initialize the new functionality.
-
-## Features & Widgets
-This project is more opinionated than some of our other project starter kits. It uses the [Bulma CSS framework](https://bulma.io/). For a more streamlined starting point you can use the [combined-astro-starter-kit](https://github.com/apostrophecms/combined-astro-starter-kit) repository.
+## 🌟 Features & Widgets
+This project is more opinionated than some of our other project starter kits. It uses the [Bulma CSS framework](https://bulma.io/). For a more streamlined starting point you can use the [combined-astro-starter-kit](https://github.com/apostrophecms/combined-astro-starter-kit) repository and install the desired Pro extensions in that project.
 
 ### Widgets
 This project provides the core ApostropheCMS widgets, plus seven additional widgets:
@@ -417,7 +395,7 @@ The default page has a layout that is identical to the 'Minimal' home-page layou
 
 Piece-type pages in ApostropheCMS only projects are used to either display multiple pieces (`index.html`) or individual pieces (`show.html`). This project has both types of pages, mapping the index of all pieces to the `ArticleIndexPage.astro` template and the display of the individual pieces to the `ArticleShowPage.astro` template. Both of these page types have three layouts for you to select from. Depending on the index layout, there are three or four additional areas for adding widgets with content before and after the piece content. The index page also demonstrates how to handle pagination in a hybrid project.
 
-## Image Helper Functions
+## 🖼️ Image Helper Functions
 
 ### Overview
 These helper functions are designed to work with images in your Astro frontend that come from ApostropheCMS through relationships or attachment fields. If you're using the image widget within an area, you should use the `AposArea` helper instead - these utilities are specifically for handling images that are part of your content model.
@@ -553,7 +531,7 @@ Key functions available (see JSDoc comments in source for detailed documentation
 - `getHeight(imageObject)`: Get image height, respecting crops
 - `getFocalPoint(attachmentObject, defaultValue?)`: Get focal point coordinates for styling
 
-## Theming
+## 🖌️ Theming
 
 Customizing the theme in this project is straightforward and leverages Bulma's powerful theming capabilities. You can override Bulma's default variables to match your brand or design requirements by editing the `frontend/src/styles/main.scss` file. This is done **before importing Bulma** so that your customizations are applied throughout the project.
 
@@ -603,7 +581,7 @@ If your changes are not reflected:
 * Ensure your variables are correctly uncommented and modified.
 * Check for any caching issues by clearing your browser cache or restarting the build process.
 
-## Package scripts
+## ⚙️ Package scripts
 
 ### Root `package.json` scripts
 
@@ -617,9 +595,9 @@ The main scripts for the Astro project located in the frontend folder are `dev`,
 
 Typically, you will only use the `dev` script in the backend folder outside of deployment. You can consult the [ApostropheCMS hosting](https://docs.apostrophecms.org/guide/hosting.html) recipes to see how these other scripts should be used.
 
-## Deploying to production
+## 🚀 Deploying to production
 
-### Using Apostrophe hosting
+### **Using Apostrophe hosting (Recommended)**
 
 Apostrophe can provide easy hosting for any ApostropheCMS-Astro monorepo with little or no extra configuration. This can be set up for deployment from Github or other code repository.
 
@@ -632,7 +610,7 @@ Apostrophe hosting will automatically handle:
 
 In the future, we will be providing a path to create your own account and create a new hosted project. In the meantime, you can [learn more](https://apostrophecms.com/hosting) and [contact us](https://apostrophecms.com/contact-us) to get your hosting set up.
 
-### Using 3rd-party hosting
+### **Using 3rd-party hosting**
 
 Third-party hosting will typically require separate servers for the ApostropheCMS and Astro portions of the repositories. This is the typical pattern seen with other CMS that are used with Astro. You will need to specify whether you want the `backend` ApostropheCMS portion of the repo, or the `frontend` Astro project hosted. How this is accomplished will depend on the provider.
 
@@ -686,12 +664,31 @@ There are a number of tutorials in the [Astro documentation](https://docs.astro.
 
 The build settings can also be supplied through a `netlify.toml` file at the root of your project.
 
-## Need Help?
+---
+
+## 🚑 Need Help?
 
 - **Documentation**: Each module includes comprehensive documentation and examples
-- **Support**: Pro license includes priority support from the ApostropheCMS team
+- **Community Support**: Join our [Discord community](https://discord.com/invite/HwntQpADJr) for help from other developers
+- **Professional Support**: Dedicated support packages available - [Contact us](https://apostrophecms.com/contact-us) to learn more
 - **Training**: Professional training and consultation services available
+
+---
+
+## 📚 Learn More
+
+- **[ApostropheCMS Documentation](https://docs.apostrophecms.org/)** - Complete CMS guide
+- **[Astro Documentation](https://docs.astro.build/)** - Learn more about Astro
+- **[Astro + ApostropheCMS Guide](https://docs.astro.build/en/guides/cms/apostrophecms/)** - Integration details
+- **[Building a Site Tutorial](https://docs.apostrophecms.org/tutorials/astro/apostrophecms-and-astro.html)** - Building a complete site with the Apollo theme
+- **[apostrophe-astro Package](https://github.com/apostrophecms/apostrophe-astro)** - Bridge package docs
+
+---
 
 ## Licensing
 
 Pro modules require a valid ApostropheCMS Pro license. [Contact our sales team](https://apostrophecms.com/contact-sales) to discuss licensing options for your organization.
+
+---
+
+*Built with ❤️ by the ApostropheCMS team. [Star us on GitHub](https://github.com/apostrophecms) if this helps your project!*
