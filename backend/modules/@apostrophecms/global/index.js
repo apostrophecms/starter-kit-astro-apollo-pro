@@ -300,14 +300,30 @@ export default {
               ],
               def: 'md'
             },
-            socialPosition: {
-              type: 'select',
-              label: 'Social Icons Position',
-              choices: [
-                { label: 'Top', value: 'top' },
-                { label: 'Bottom', value: 'bottom' }
-              ],
-              def: 'top'
+            // Custom Links
+            footerCustomLinks: {
+              type: 'array',
+              label: 'Custom Footer Links',
+              titleField: 'linkText',
+              fields: {
+                add: {
+                  linkText: {
+                    type: 'string',
+                    label: 'Link Text',
+                    required: true
+                  },
+                  linkUrl: {
+                    type: 'url',
+                    label: 'Link URL',
+                    required: true
+                  },
+                  openInNewTab: {
+                    type: 'boolean',
+                    label: 'Open in New Tab',
+                    def: false
+                  }
+                }
+              }
             },
             // Copyright settings
             copyrightText: {

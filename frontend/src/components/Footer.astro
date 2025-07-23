@@ -38,8 +38,9 @@ const linkClasses = [
   'hover-fade'
 ].join(' ');
 
+
 // Extract footer sections
-const footerSections = footer.footerSections || [];
+const footerCustomLinks = footer.footerCustomLinks || [];
 
 // Get link attributes for external links
 const getLinkAttributes = (url: string, openInNewTab?: boolean) => ({
@@ -51,14 +52,13 @@ const getLinkAttributes = (url: string, openInNewTab?: boolean) => ({
     : {})
 });
 
-const socialPosition = footer.socialPosition || 'top';
 const { renderBranding } = useSiteConfig(aposData.global);
 ---
 
 <footer class={footerClasses} role="contentinfo">
   <div class="container">
     {/* Top Social Links */}
-    {footer.socialLinks?.length > 0 && socialPosition === 'top' && (
+    {footer.socialLinks?.length > 0 && (
       <div class="social-links has-text-centered mb-4">
         {footer.socialLinks.map(({ platform, url, ariaLabel }) => {
           const iconName = platformIcons[platform as keyof typeof platformIcons];
@@ -116,37 +116,6 @@ const { renderBranding } = useSiteConfig(aposData.global);
       </div>
     )}
 
-    {/* Bottom Social Links */}
-    {footer.socialLinks?.length > 0 && socialPosition === 'bottom' && (
-      <div class="social-links has-text-centered mt-4">
-        {footer.socialLinks.map(({ platform, url, ariaLabel }) => {
-          const iconName = platformIcons[platform as keyof typeof platformIcons];
-          if (!iconName) return null;
-
-          return (
-            <a
-              href={url}
-              class={`${linkClasses} social-icon icon-${footer.socialIconStyle || 'rounded'} ${
-                footer.socialIconSize === 'sm' ? 'is-size-5' : 
-                footer.socialIconSize === 'lg' ? 'is-size-3' : 
-                'is-size-4'
-              }`}
-              {...getLinkAttributes(url)}
-              aria-label={ariaLabel || `Visit our ${platform} page`}
-            >
-              <span class={`icon ${
-                footer.socialIconSize === 'sm' ? 'is-small' : 
-                footer.socialIconSize === 'lg' ? 'is-large' : 
-                'is-medium'
-              }`}>
-                <i class={`fab fa-${iconName}`} aria-hidden="true"></i>
-              </span>
-            </a>
-          );
-        })}
-      </div>
-    )}
-
     {/* Copyright Section */}
     <div class="has-text-centered">
       <p class="is-size-7">
@@ -157,6 +126,25 @@ const { renderBranding } = useSiteConfig(aposData.global);
         </small>
       </p>
     </div>
+
+    {/* Custom Links */}
+    {footerCustomLinks.length > 0 && (
+      <nav class="footer-nav footer-nav--custom" aria-label="Footer navigation">
+        {/* Main Navigation */}
+        <ul class="footer-list is-size-7">
+          {footerCustomLinks.map((page) => (
+            <li>
+              <a 
+                href={page.linkUrl}
+                class={`${linkClasses}`} 
+              >
+                {page.linkText}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
   </div>
 </footer>
 
@@ -181,6 +169,10 @@ const { renderBranding } = useSiteConfig(aposData.global);
       li:last-child {
           margin-bottom: 0;
       }
+    }
+
+    .footer-nav--custom {
+      margin: 0.75rem 0;
     }
 
     .footer-brand {
