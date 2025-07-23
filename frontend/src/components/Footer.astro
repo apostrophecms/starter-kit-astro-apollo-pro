@@ -88,59 +88,33 @@ const { renderBranding } = useSiteConfig(aposData.global);
       </div>
     )}
 
-    {/* Main Content Section */}
-    <div class="columns is-multiline is-centered">
-      {footer.showBranding && (
-        <div class="column is-narrow has-text-centered mb-0">
-          <a href="/" class="navbar-item is-size-2" set:html={renderBranding()} />
-        </div>
-      )}
-
-      {/* Navigation Links Section */}
-      {(footerNav.length > 0 || footerSections.length > 0) && (
-        <nav class="column is-12-mobile is-6-tablet is-4-desktop" aria-label="Footer navigation">
-          <div class="columns is-multiline is-centered">
-            {/* Main Navigation */}
-            {footerNav.length > 0 && (
-              <div class="column is-narrow has-text-centered mb-0">
-                <ul class="footer-list">
-                  {footerNav.map((page) => (
-                    <li>
-                      <a 
-                        href={page._url} 
-                        class={`${linkClasses} ${page._url === aposData.page?._url ? 'is-active' : ''}`}
-                      >
-                        {page.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* Custom Sections with Links */}
-            {footerSections.map((section) => (
-              <div class="column is-narrow has-text-centered mb-0">
-                <h2 class="footer-heading">{section.sectionTitle}</h2>
-                <ul class="footer-list">
-                  {section.links.map((link) => (
-                    <li>
-                      <a
-                        href={link.linkUrl}
-                        class={linkClasses}
-                        {...getLinkAttributes(link.linkUrl, link.openInNewTab)}
-                      >
-                        {link.linkText}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+    {/* Navigation Links Section */}
+    {footerNav.length > 0 && (
+      <nav class="footer-nav" aria-label="Footer navigation">
+        {/* Main Navigation */}
+        {footerNav.length > 0 && (
+          <ul class="footer-list is-size-6">
+            {footerNav.map((page) => (
+              <li>
+                <a 
+                  href={page._url} 
+                  class={`${linkClasses}`}
+                >
+                  {page.title}
+                </a>
+              </li>
             ))}
-          </div>
-        </nav>
-      )}
-    </div>
+          </ul>
+        )}
+      </nav>
+    )}
+
+    {/* Main Content Section */}
+    {footer.showBranding && (
+      <div class="footer-brand column is-narrow has-text-centered mb-0">
+        <a href="/" class="navbar-item is-size-2" set:html={renderBranding()} />
+      </div>
+    )}
 
     {/* Bottom Social Links */}
     {footer.socialLinks?.length > 0 && socialPosition === 'bottom' && (
@@ -197,17 +171,25 @@ const { renderBranding } = useSiteConfig(aposData.global);
     }
 
     .footer-list {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
       list-style: none;
       padding: 0;
       margin: 0;
 
       li {
-        margin-bottom: 0.75rem;
+        // margin-bottom: 0.75rem;
 
         &:last-child {
           margin-bottom: 0;
         }
       }
+    }
+
+    .footer-brand {
+      display: flex;
+      justify-content: center;
     }
 
     a {
@@ -216,10 +198,6 @@ const { renderBranding } = useSiteConfig(aposData.global);
 
       &:hover {
         opacity: 0.8;
-      }
-
-      &.is-active {
-        font-weight: 500;
       }
     }
 

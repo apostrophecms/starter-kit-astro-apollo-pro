@@ -309,45 +309,6 @@ export default {
               ],
               def: 'top'
             },
-            // Custom Links
-            footerSections: {
-              type: 'array',
-              label: 'Footer Sections',
-              titleField: 'sectionTitle',
-              fields: {
-                add: {
-                  sectionTitle: {
-                    type: 'string',
-                    label: 'Section Title',
-                    required: true
-                  },
-                  links: {
-                    type: 'array',
-                    label: 'Links',
-                    titleField: 'linkText',
-                    fields: {
-                      add: {
-                        linkText: {
-                          type: 'string',
-                          label: 'Link Text',
-                          required: true
-                        },
-                        linkUrl: {
-                          type: 'url',
-                          label: 'Link URL',
-                          required: true
-                        },
-                        openInNewTab: {
-                          type: 'boolean',
-                          label: 'Open in New Tab',
-                          def: false
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            },
             // Copyright settings
             copyrightText: {
               type: 'string',
@@ -359,20 +320,6 @@ export default {
               type: 'boolean',
               label: 'Show Current Year',
               def: true
-            },
-            additionalFooterText: {
-              type: 'array',
-              label: 'Additional Footer Text',
-              titleField: 'text',
-              fields: {
-                add: {
-                  text: {
-                    type: 'string',
-                    label: 'Text',
-                    textarea: true
-                  }
-                }
-              }
             }
           }
         }
