@@ -140,8 +140,6 @@ export default apostrophe({
     */
     ...getTranslationAndSeoModules(),
 
-    '@apostrophecms-pro/signup': {},
-
     '@apostrophecms-pro/document-versions': {},
     '@apostrophecms-pro/doc-template-library': {},
     '@apostrophecms-pro/palette': {}
