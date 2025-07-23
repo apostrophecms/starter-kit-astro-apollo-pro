@@ -55,7 +55,6 @@
     "@apostrophecms-pro/import-export-translation": "^1.0.3",
     "@apostrophecms-pro/palette": "github:apostrophecms/palette",
     "@apostrophecms-pro/seo-assistant": "^1.2.1",
-    "@apostrophecms-pro/signup": "^2.0.2",
     "@apostrophecms/favicon": "github:apostrophecms/favicon",
     "@apostrophecms/mongodb-snapshot": "^1.1.0",
     "@apostrophecms/open-graph": "github:apostrophecms/open-graph",
