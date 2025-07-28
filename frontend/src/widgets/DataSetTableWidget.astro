@@ -1,0 +1,63 @@
+---
+/**
+ * @typedef {Object} DataSetItem
+ * @property {string} _id - The dataset ID
+ * @property {Object} data - The dataset container
+ * @property {Array<Object>} data.data - Array of row data objects
+ */
+
+/**
+ * @typedef {Object} Widget
+ * @property {boolean} [aposPlaceholder] - Whether to show placeholder
+ * @property {Array<DataSetItem>} [_dataSet] - Array of datasets
+ * @property {Array<string>} [columns] - Column names for the table
+ */
+
+/**
+ * @typedef {Object} Props
+ * @property {Widget} widget - The widget data and configuration
+ * @property {Object} [options] - Per-area options including className
+ * @property {*} [user] - User object (if authenticated)
+ */
+
+const { widget, options, user } = Astro.props;
+
+// Get dataset and columns if available
+const dataSet = widget._dataSet?.[0];
+const columns = widget.columns || [];
+---
+
+{
+  dataSet ? (
+    <div data-apos-data-set-widget data-apos-data-set-id={dataSet._id} class={options?.className}>
+      <table>
+        <thead>
+          <tr>
+            {columns.map((column) => (
+              <th>{column}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {dataSet.data.data.map((row) => (
+            <tr>
+              {columns.map((column) => (
+                <td>{row[column]}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  ) : user ? (
+    <p
+      class={
+        options?.className
+          ? `${options.className} ${options.className}--error`
+          : undefined
+      }
+    >
+      No data set selected
+    </p>
+  ) : null
+}

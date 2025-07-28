@@ -21,7 +21,8 @@ export const widgetGroups = {
       hero: {},
       accordion: {},
       card: {},
-      link: {}
+      link: {},
+      '@apostrophecms-pro/data-set': {}
     }
   }
 };
