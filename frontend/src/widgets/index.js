@@ -8,7 +8,7 @@ import HeroWidget from './HeroWidget.astro';
 import LinkWidget from './LinkWidget.astro';
 import SlideshowWidget from './SlideshowWidget.astro';
 import RowsWidget from './RowsWidget.astro';
-import DataSetTableWidget from './DataSetTableWidget.astro';
+import DataSetWidget from './DataSetWidget.astro';
 
 const widgetComponents = {
   '@apostrophecms/rich-text': RichTextWidget,
@@ -21,7 +21,7 @@ const widgetComponents = {
   'link': LinkWidget,
   'slideshow': SlideshowWidget,
   'rows': RowsWidget,
-  '@apostrophecms-pro/data-set:table': DataSetTableWidget
+  '@apostrophecms-pro/data-set': DataSetWidget
 };
 
 export default widgetComponents;
