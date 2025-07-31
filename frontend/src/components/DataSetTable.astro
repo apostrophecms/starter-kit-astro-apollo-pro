@@ -1,0 +1,48 @@
+---
+const { widget, dataSet, columns, options = {} } = Astro.props;
+
+const className = options.className || null;
+
+// Get the data array - handle nested structure
+const tableData = dataSet?.data?.data || [];
+
+// Get columns array
+const tableColumns = columns || [];
+
+// Check if we're in edit mode (equivalent to data.user in Nunjucks)
+const isEdit = widget._edit && Astro.url.searchParams.get('aposEdit');
+---
+{ tableData ? (
+  <!-- Main widget content when dataset exists -->
+  <div
+    class={className}
+    data-apos-data-set-widget
+    data-apos-data-set-id={dataSet._id}
+  >
+    <table>
+      <thead>
+        <tr>
+          {tableColumns.map((column) => (
+            <th>{column}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {tableData.map((row) => (
+          <tr>
+            {tableColumns.map((column) => (
+              <td>
+                {row[column] || ''}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+) : isEdit ? (
+  <!-- Error state when in edit mode but no dataset selected -->
+  <p>
+    Dataset not selected
+  </p>
+) : null}

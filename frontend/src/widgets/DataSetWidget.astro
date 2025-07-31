@@ -1,0 +1,50 @@
+---
+/**
+ * @typedef {Object} DataSetItem
+ * @property {string} _id - The dataset ID
+ * @property {Object} data - The dataset container
+ * @property {Array<Object>} data.data - Array of row data objects
+ */
+
+/**
+ * @typedef {Object} Widget
+ * @property {Array<DataSetItem>} [_dataSet] - Array of datasets
+ * @property {Array<string>} [columns] - Column names for the table
+ * @property {string} template - Template to be used for data render
+ */
+
+/**
+ * @typedef {Object} Props
+ * @property {Widget} widget - The widget data and configuration
+ * @property {Object} [options] - Per-area options including className
+ */
+
+// Add any additional template imports here
+import DataSetTable from '../components/DataSetTable.astro';
+
+// Map template components for easier use
+const TEMPLATE_COMPONENTS = {
+  table: DataSetTable
+};
+
+const { widget, options } = Astro.props;
+const { _dataSet, columns, template = 'table' } = widget;
+
+const TemplateComponent = TEMPLATE_COMPONENTS[template] || TEMPLATE_COMPONENTS.table;
+
+// set shared template props
+const templateProps = {
+  widget,
+  dataSet: _dataSet?.[0],
+  columns,
+  options
+};
+---
+{TemplateComponent ? (
+  <TemplateComponent {...templateProps} />
+) : (
+  <div class="dataset-widget-error">
+    <p>Unknown template: "{template}"</p>
+    <p>Available templates: {Object.keys(TEMPLATE_COMPONENTS).join(', ')}</p>
+  </div>
+)}
