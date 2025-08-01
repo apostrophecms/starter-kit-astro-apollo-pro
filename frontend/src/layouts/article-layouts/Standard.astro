@@ -55,7 +55,7 @@ const currentCategory = Astro.url.searchParams.get('category') || '';
                     )}
                     <div class='media-content'>
                       <p class='has-text-grey'>
-                        By <strong>{article._author[0].title}</strong> |
+                        By <strong>{article._author[0]?.title || 'unknown'}</strong> |
                         {new Date(article.publishDate).toLocaleDateString()}
                       </p>
                     </div>

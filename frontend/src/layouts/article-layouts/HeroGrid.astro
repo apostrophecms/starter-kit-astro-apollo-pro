@@ -63,7 +63,7 @@ const currentCategory = Astro.url.searchParams.get('category') || '';
           )}
           <div class='media-content'>
             <p>
-              <strong>{pieces[0]._author[0].title}</strong>
+              <strong>{pieces[0]._author[0]?.title || 'unknown'}</strong>
               <br />
               {new Date(pieces[0].publishDate).toLocaleDateString()}
             </p>
@@ -110,7 +110,7 @@ const currentCategory = Astro.url.searchParams.get('category') || '';
               <h3 class='title is-4'>{article.title}</h3>
             </a>
             <p class='subtitle is-6'>
-              By {article._author[0].title} |
+              By {article._author[0]?.title || 'unknown'} |
               {new Date(article.publishDate).toLocaleDateString()}
             </p>
             <p class='content'>{article.excerpt}</p>
