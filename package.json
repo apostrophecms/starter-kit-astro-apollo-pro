@@ -35,6 +35,5 @@
   },
   "homepage": "https://github.com/apostrophecms/apollo-pro#readme",
   "dependencies": {
-    "postcss-viewport-to-container-toggle": "^2.0.0"
   }
 }

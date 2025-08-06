@@ -47,21 +47,12 @@ const getTranslationAndSeoModules = () => {
     }
   }
 
-  if (hasOpenAI) {
-    entries.push([ '@apostrophecms-pro/seo-assistant', {
-      options: {
-        provider: 'openai'
-      }
-    } ]);
-    entries.push([ '@apostrophecms-pro/seo-assistant-openai', {} ]);
-  }
-
   return Object.fromEntries(entries);
 };
 
 export default apostrophe({
   root: import.meta,
-  shortName: 'apollo-pro',
+  shortName: 'apollo-pro-for-test',
   baseUrl: process.env.APOS_BASE_URL || 'http://localhost:4321',
   modules: {
     // Apostrophe module configuration
@@ -133,10 +124,8 @@ export default apostrophe({
         for both SEO Assistant and Import Export Translations modules
       ℹ️ The provider will be set automatically by the environment variable
         and the helper method above. See the repo README for details
-      ℹ️ The `@apostrophecms-pro/seo-assistant` requires that the
-        `OPENAI_API_KEY` environment variable be set
       ℹ️ The `@apostrophecms-pro/import-export-translation` doesn't require a key
-        
+
     */
     ...getTranslationAndSeoModules(),
 
