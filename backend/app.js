@@ -52,7 +52,7 @@ const getTranslationAndSeoModules = () => {
 
 export default apostrophe({
   root: import.meta,
-  shortName: 'apollo-pro-for-test',
+  shortName: 'apollo-pro',
   baseUrl: process.env.APOS_BASE_URL || 'http://localhost:4321',
   modules: {
     // Apostrophe module configuration
