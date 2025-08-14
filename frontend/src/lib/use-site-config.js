@@ -27,29 +27,13 @@ export function useSiteConfig(globalData) {
 
     if (isActive) {
       classes.push('is-active');
-      // if (headerGroup.headerActiveColor) {
-      //   classes.push(`has-background-${headerGroup.headerActiveColor}`);
-      // }
     }
-
-    // Add hover classes via data attribute for CSS handling
-    // if (headerGroup.headerHoverColor) {
-    //   classes.push(`hover-color-${headerGroup.headerHoverColor}`);
-    // }
 
     return classes.join(' ');
   };
 
   const getDropdownClasses = () => {
     const classes = ['navbar-dropdown'];
-    // if (headerGroup.dropdownTextColor) {
-    //   classes.push(`has-text-${headerGroup.dropdownTextColor}`);
-    // }
-
-    // if (headerGroup.headerBackgroundColor) {
-    //   classes.push(`has-background-${headerGroup.headerBackgroundColor}`);
-    // }
-
     return classes.join(' ');
   };
 
