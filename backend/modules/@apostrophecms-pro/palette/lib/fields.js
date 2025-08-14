@@ -1,7 +1,7 @@
 const funColors = [ '#264653', '#2a9d8f', '#e9c46a', '#f4a261', '#e76f51' ];
 const neutralColors = [ '#f8f9fa', '#e9ecef', '#dee2e6', '#ced4da', '#adb5bd', '#6c757d', '#495057', '#343a40', '#212529' ];
 const headings = [ 'h1', 'h2', 'h3', 'h4', 'h5', 'p' ];
-const weights = [ '300', '400', '500', '600' ];
+const weights = [ '300', '400', '500', '600', '700' ];
 const fontFams = [
   'Inter Variable',
   'Garamond',
@@ -13,8 +13,12 @@ const headingsStyles = {};
 headings.forEach(heading => {
   headingsStyles[`${heading}Font`] = {
     type: 'select',
-    label: `${heading.toUpperCase()} Font`,
-    selector: `.${heading}`,
+    label: 'Font',
+    selector: [
+      `.${heading}`,
+      `.rich-text-widget ${heading}`,
+      `.apos-rich-text-editor__editor ${heading}`
+    ],
     important: true,
     property: 'font-family',
     choices: fontFams.map((f) => ({
@@ -25,8 +29,12 @@ headings.forEach(heading => {
   headingsStyles[`${heading}SizeDesktop`] = {
     type: 'range',
     important: true,
-    label: `${heading.toUpperCase()} Size (Desktop)`,
-    selector: `.${heading}`,
+    label: 'Size (desktop)',
+    selector: [
+      `.${heading}`,
+      `.rich-text-widget ${heading}`,
+      `.apos-rich-text-editor__editor ${heading}`
+    ],
     property: 'font-size',
     mediaQuery: '(770px <= width <= 9999px)',
     min: 14,
@@ -37,8 +45,12 @@ headings.forEach(heading => {
   headingsStyles[`${heading}SizeTablet`] = {
     type: 'range',
     important: true,
-    label: `${heading.toUpperCase()} Size (Tablet)`,
-    selector: `.${heading}`,
+    label: 'Size (tablet)',
+    selector: [
+      `.${heading}`,
+      `.rich-text-widget ${heading}`,
+      `.apos-rich-text-editor__editor ${heading}`
+    ],
     property: 'font-size',
     mediaQuery: '(480px <= width <= 769px)',
     min: 14,
@@ -50,8 +62,12 @@ headings.forEach(heading => {
     type: 'range',
     important: true,
     mediaQuery: '(0px <= width <= 479px)',
-    label: `${heading.toUpperCase()} Size (Mobile)`,
-    selector: `.${heading}`,
+    label: 'Size (mobile)',
+    selector: [
+      `.${heading}`,
+      `.rich-text-widget ${heading}`,
+      `.apos-rich-text-editor__editor ${heading}`
+    ],
     property: 'font-size',
     min: 14,
     max: 144,
@@ -62,8 +78,12 @@ headings.forEach(heading => {
   headingsStyles[`${heading}Weight`] = {
     type: 'select',
     important: true,
-    label: `${heading.toUpperCase()} Weight`,
-    selector: `.${heading}`,
+    label: 'Weight',
+    selector: [
+      `.${heading}`,
+      `.rich-text-widget ${heading}`,
+      `.apos-rich-text-editor__editor ${heading}`
+    ],
     property: 'font-weight',
     choices: weights.map((f) => ({
       label: f.toUpperCase(),
@@ -73,8 +93,12 @@ headings.forEach(heading => {
   headingsStyles[`${heading}Color`] = {
     type: 'color',
     important: true,
-    label: `${heading.toUpperCase()} Color`,
-    selector: `.${heading}`,
+    label: 'Color',
+    selector: [
+      `.${heading}`,
+      `.rich-text-widget ${heading}`,
+      `.apos-rich-text-editor__editor ${heading}`
+    ],
     property: 'color',
     options: {
       presetColors: neutralColors
@@ -83,8 +107,12 @@ headings.forEach(heading => {
   headingsStyles[`${heading}LH`] = {
     type: 'range',
     important: true,
-    label: `${heading.toUpperCase()} Line Height`,
-    selector: `.${heading}`,
+    label: 'Line height',
+    selector: [
+      `.${heading}`,
+      `.rich-text-widget ${heading}`,
+      `.apos-rich-text-editor__editor ${heading}`
+    ],
     property: 'line-height',
     min: 0.9,
     max: 2,
@@ -94,8 +122,12 @@ headings.forEach(heading => {
   headingsStyles[`${heading}LS`] = {
     type: 'range',
     important: true,
-    label: `${heading.toUpperCase()} Letter Spacing`,
-    selector: `.${heading}`,
+    label: 'Letter spacing',
+    selector: [
+      `.${heading}`,
+      `.rich-text-widget ${heading}`,
+      `.apos-rich-text-editor__editor ${heading}`
+    ],
     property: 'letter-spacing',
     min: -5,
     max: 10,
@@ -107,10 +139,81 @@ headings.forEach(heading => {
 export default {
   // headings
   ...headingsStyles,
+  siteBackgroundColor: {
+    type: 'color',
+    label: 'Background color',
+    selector: [
+      'body'
+    ],
+    property: 'background-color',
+    options: {
+      presetColors: funColors
+    }
+  },
+  // Site
+  siteBorderColor: {
+    type: 'color',
+    label: 'Border color',
+    selector: [
+      'body'
+    ],
+    property: 'border-color',
+    options: {
+      presetColors: funColors
+    }
+  },
+  siteBorderThickness: {
+    type: 'range',
+    label: 'Border thickness',
+    selector: 'body',
+    important: true,
+    property: 'border-width',
+    unit: 'px',
+    min: 0,
+    max: 20,
+    step: 1,
+    def: 0
+  },
+  sitePadding: {
+    type: 'range',
+    label: 'Padding',
+    selector: 'body',
+    important: true,
+    property: 'padding',
+    unit: 'px',
+    min: 0,
+    max: 30,
+    step: 1,
+    def: 0
+  },
+  // buttons
+  buttonBackgroundColor: {
+    type: 'color',
+    label: 'Background color',
+    selector: [
+      '.button.default'
+    ],
+    property: 'background-color',
+    options: {
+      presetColors: funColors
+    }
+  },
+  buttonBackgroundColorHover: {
+    type: 'color',
+    label: 'Background Color (Hover)',
+    selector: [
+      '.button.default:hover'
+    ],
+    property: 'background-color',
+    // important: true,
+    options: {
+      presetColors: funColors
+    }
+  },
   // header
   headerBackgroundColor: {
     type: 'color',
-    label: 'Header Background',
+    label: 'Background color',
     selector: [
       '.navbar',
       '.navbar-dropdown',
@@ -125,7 +228,7 @@ export default {
   },
   headerTransparency: {
     type: 'range',
-    label: 'Header Transparency',
+    label: 'Transparency',
     help: '0 is fully transparent, 100 is solid',
     selector: '.navbar',
     property: 'opacity',
@@ -136,7 +239,7 @@ export default {
   },
   headerTextColor: {
     type: 'color',
-    label: 'Header Text Color',
+    label: 'Text color',
     important: true,
     selector: [
       '.navbar .navbar-link',
@@ -145,26 +248,14 @@ export default {
       '.navbar .navbar-item',
       '.navbar .navbar-brand-text'
     ],
-    help: 'Choose the color for navigation text',
     property: [ 'color', 'border-color' ],
     options: {
       presetColors: neutralColors
     }
   },
-  headerActiveColor: {
-    type: 'color',
-    label: 'Active Link Color',
-    help: 'Color for the currently active navigation item',
-    property: 'background-color',
-    selector: '.navbar-item.is-active',
-    options: {
-      presetColors: funColors
-    }
-  },
   headerHoverColor: {
     type: 'color',
-    label: 'Link Hover Color',
-    help: 'Color for the navigation item when hovered over',
+    label: 'Text color (hover)',
     selector: [
       '.navbar-item:hover',
       '.navbar-link:hover',
@@ -176,12 +267,20 @@ export default {
       presetColors: funColors
     }
   },
+  headerActiveColor: {
+    type: 'color',
+    label: 'Active-page link color',
+    property: 'background-color',
+    selector: '.navbar-item.is-active',
+    options: {
+      presetColors: funColors
+    }
+  },
   headerDropdownTextColor: {
     type: 'color',
     important: true,
-    label: 'Header Dropdown Text Color',
+    label: 'Dropdown text color',
     selector: '.navbar-dropdown .navbar-item',
-    help: 'Choose the color for navigation text',
     property: 'color',
     options: {
       presetColors: neutralColors
@@ -190,7 +289,7 @@ export default {
   headerMobileNavbarTextColor: {
     type: 'color',
     important: true,
-    label: 'Mobile Nav Text Color',
+    label: 'Mobile navigation text color',
     selector: '.navbar-burger',
     property: 'color',
     options: {
@@ -201,7 +300,7 @@ export default {
   // footer
   footerBackgroundColor: {
     type: 'color',
-    label: 'Footer background color',
+    label: 'Background color',
     selector: '.footer-modern',
     property: 'background-color',
     options: {
@@ -210,7 +309,7 @@ export default {
   },
   footerTextColor: {
     type: 'color',
-    label: 'Footer text color',
+    label: 'Text color',
     selector: '.footer-modern',
     property: 'color',
     options: {
@@ -219,7 +318,7 @@ export default {
   },
   footerLinkColor: {
     type: 'color',
-    label: 'Footer link color',
+    label: 'Link color',
     selector: '.footer-modern a',
     property: 'color',
     options: {
@@ -228,17 +327,8 @@ export default {
   },
   footerLinkHoverColor: {
     type: 'color',
-    label: 'Footer link hover color',
+    label: 'Link color (hover)',
     selector: '.footer-modern a:hover',
-    property: 'color',
-    options: {
-      presetColors: funColors
-    }
-  },
-  headingOneTextColor: {
-    type: 'color',
-    label: 'Heading One Color',
-    selector: 'h1',
     property: 'color',
     options: {
       presetColors: funColors

@@ -94,6 +94,8 @@ body {
     'Arial',
     sans-serif
   );
+  border-style: solid;
+  border-width: 0;
 }
 
 h1,
@@ -191,3 +193,20 @@ ol.apos-area-widget__breadcrumbs {
 // .title.is-2, h1.is-2, h3.is-2, h4.is-2, h5.is-2, h6.is-2, h2 {
 //   all: unset;
 // }
+
+.h1 {
+  @extend .is-1;
+}
+
+.h2 {
+  @extend .is-3;
+}
+
+.h3 {
+  @extend .is-4;
+}
+
+.h4, .h5 {
+  @extend .is-5;
+}
+

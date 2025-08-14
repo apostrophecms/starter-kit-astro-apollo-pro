@@ -5,13 +5,13 @@ function getKeysWithPrefix(obj, prefix) {
 }
 
 export default {
+  site: {
+    label: 'Site',
+    fields: getKeysWithPrefix(fields, 'site')
+  },
   header: {
     label: 'Header',
     fields: getKeysWithPrefix(fields, 'header')
-  },
-  footer: {
-    label: 'Footer',
-    fields: getKeysWithPrefix(fields, 'footer')
   },
   headings: {
     label: 'Headings',
@@ -40,10 +40,14 @@ export default {
   },
   paragraphs: {
     label: 'Paragraphs',
-    fields: [ ]
+    fields: getKeysWithPrefix(fields, 'p')
   },
   buttons: {
-    label: 'Paragraphs',
-    fields: [ ]
-  }
+    label: 'Buttons',
+    fields: getKeysWithPrefix(fields, 'button')
+  },
+  footer: {
+    label: 'Footer',
+    fields: getKeysWithPrefix(fields, 'footer')
+  } 
 };
