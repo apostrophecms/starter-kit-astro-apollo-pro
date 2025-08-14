@@ -208,38 +208,38 @@ export default {
               def: true
             },
             // Appearance settings
-            footerBackgroundColor: {
-              type: 'select',
-              label: 'Background Color',
-              help: 'Choose the background color for the footer',
-              choices: colorOptionsHelper.getColorOptions(),
-              def: 'white'
-            },
-            footerTextColor: {
-              type: 'select',
-              label: 'Text Color',
-              help: 'Choose the color for footer text',
-              choices: colorOptionsHelper.getColorOptions().filter(color =>
-                color.value !== 'transparent'
-              ),
-              def: 'black'
-            },
-            footerLinkColor: {
-              type: 'select',
-              label: 'Link Color',
-              help: 'Choose the color for footer links',
-              choices: colorOptionsHelper.getColorOptions().filter(color =>
-                color.value !== 'transparent'
-              )
-            },
-            footerLinkHoverColor: {
-              type: 'select',
-              label: 'Link Hover Color',
-              help: 'Choose the color for footer links when hovered over',
-              choices: colorOptionsHelper.getColorOptions().filter(color =>
-                color.value !== 'transparent'
-              )
-            },
+            // footerBackgroundColor: {
+            //   type: 'select',
+            //   label: 'Background Color',
+            //   help: 'Choose the background color for the footer',
+            //   choices: colorOptionsHelper.getColorOptions(),
+            //   def: 'white'
+            // },
+            // footerTextColor: {
+            //   type: 'select',
+            //   label: 'Text Color',
+            //   help: 'Choose the color for footer text',
+            //   choices: colorOptionsHelper.getColorOptions().filter(color =>
+            //     color.value !== 'transparent'
+            //   ),
+            //   def: 'black'
+            // },
+            // footerLinkColor: {
+            //   type: 'select',
+            //   label: 'Link Color',
+            //   help: 'Choose the color for footer links',
+            //   choices: colorOptionsHelper.getColorOptions().filter(color =>
+            //     color.value !== 'transparent'
+            //   )
+            // },
+            // footerLinkHoverColor: {
+            //   type: 'select',
+            //   label: 'Link Hover Color',
+            //   help: 'Choose the color for footer links when hovered over',
+            //   choices: colorOptionsHelper.getColorOptions().filter(color =>
+            //     color.value !== 'transparent'
+            //   )
+            // },
             // Social Media settings
             socialLinks: {
               type: 'array',
