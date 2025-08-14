@@ -205,7 +205,6 @@ export default {
       '.button.default:hover'
     ],
     property: 'background-color',
-    // important: true,
     options: {
       presetColors: funColors
     }
