@@ -195,13 +195,4 @@ export default {
       linkStyle: 'button'
     }
   }
-  // buttonColor: {
-  //   label: 'Button Color',
-  //   type: 'select',
-  //   def: 'primary',
-  //   choices: colorOptionsHelper.getColorOptions(),
-  //   if: {
-  //     linkStyle: 'button'
-  //   }
-  // }
 };
