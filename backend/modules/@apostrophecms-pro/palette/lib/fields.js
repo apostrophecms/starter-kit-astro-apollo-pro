@@ -9,16 +9,22 @@ const fontFams = [
   'cursive',
   'fantasy'
 ];
+function typeSelectors(heading) {
+  return [
+    `.${heading}`,
+    `.rich-text-widget ${heading}`,
+    `.apos-rich-text-editor__editor ${heading}`,
+    `${heading}.content`,
+    `.card-content ${heading}.subtitle`
+  ];
+}
+
 const headingsStyles = {};
 headings.forEach(heading => {
   headingsStyles[`${heading}Font`] = {
     type: 'select',
     label: 'Font',
-    selector: [
-      `.${heading}`,
-      `.rich-text-widget ${heading}`,
-      `.apos-rich-text-editor__editor ${heading}`
-    ],
+    selector: typeSelectors(heading),
     important: true,
     property: 'font-family',
     choices: fontFams.map((f) => ({
@@ -30,11 +36,7 @@ headings.forEach(heading => {
     type: 'range',
     important: true,
     label: 'Size (desktop)',
-    selector: [
-      `.${heading}`,
-      `.rich-text-widget ${heading}`,
-      `.apos-rich-text-editor__editor ${heading}`
-    ],
+    selector: typeSelectors(heading),
     property: 'font-size',
     mediaQuery: '(770px <= width <= 9999px)',
     min: 14,
@@ -46,11 +48,7 @@ headings.forEach(heading => {
     type: 'range',
     important: true,
     label: 'Size (tablet)',
-    selector: [
-      `.${heading}`,
-      `.rich-text-widget ${heading}`,
-      `.apos-rich-text-editor__editor ${heading}`
-    ],
+    selector: typeSelectors(heading),
     property: 'font-size',
     mediaQuery: '(480px <= width <= 769px)',
     min: 14,
@@ -63,11 +61,7 @@ headings.forEach(heading => {
     important: true,
     mediaQuery: '(0px <= width <= 479px)',
     label: 'Size (mobile)',
-    selector: [
-      `.${heading}`,
-      `.rich-text-widget ${heading}`,
-      `.apos-rich-text-editor__editor ${heading}`
-    ],
+    selector: typeSelectors(heading),
     property: 'font-size',
     min: 14,
     max: 144,
@@ -79,11 +73,7 @@ headings.forEach(heading => {
     type: 'select',
     important: true,
     label: 'Weight',
-    selector: [
-      `.${heading}`,
-      `.rich-text-widget ${heading}`,
-      `.apos-rich-text-editor__editor ${heading}`
-    ],
+    selector: typeSelectors(heading),
     property: 'font-weight',
     choices: weights.map((f) => ({
       label: f.toUpperCase(),
@@ -94,11 +84,7 @@ headings.forEach(heading => {
     type: 'color',
     important: true,
     label: 'Color',
-    selector: [
-      `.${heading}`,
-      `.rich-text-widget ${heading}`,
-      `.apos-rich-text-editor__editor ${heading}`
-    ],
+    selector: typeSelectors(heading),
     property: 'color',
     options: {
       presetColors: neutralColors
@@ -108,11 +94,7 @@ headings.forEach(heading => {
     type: 'range',
     important: true,
     label: 'Line height',
-    selector: [
-      `.${heading}`,
-      `.rich-text-widget ${heading}`,
-      `.apos-rich-text-editor__editor ${heading}`
-    ],
+    selector: typeSelectors(heading),
     property: 'line-height',
     min: 0.9,
     max: 2,
@@ -123,11 +105,7 @@ headings.forEach(heading => {
     type: 'range',
     important: true,
     label: 'Letter spacing',
-    selector: [
-      `.${heading}`,
-      `.rich-text-widget ${heading}`,
-      `.apos-rich-text-editor__editor ${heading}`
-    ],
+    selector: typeSelectors(heading),
     property: 'letter-spacing',
     min: -5,
     max: 10,
@@ -207,6 +185,17 @@ export default {
     property: 'background-color',
     options: {
       presetColors: funColors
+    }
+  },
+  buttonTextColor: {
+    type: 'color',
+    label: 'Text color',
+    selector: [
+      '.button.default'
+    ],
+    property: 'color',
+    options: {
+      presetColors: neutralColors
     }
   },
   // header
