@@ -1,0 +1,56 @@
+---
+import AposArea from '@apostrophecms/apostrophe-astro/components/AposArea.astro';
+import AposWidget from '@apostrophecms/apostrophe-astro/components/AposWidget.astro';
+
+if (Astro.request.method !== 'POST') {
+  throw new Error('POST with JSON data expected');
+}
+if (Astro.request.headers.get('apos-external-front-key') !== process.env.APOS_EXTERNAL_FRONT_KEY) {
+  throw new Error('apos-external-front-key header missing or incorrect');
+}
+const data = await Astro.request.json();
+const area = data.area;
+const widgetOptions = getWidgetOptions(area.options);
+
+console.log(`The area going in is: ${JSON.stringify(area, null, 2)}`);
+
+import { experimental_AstroContainer as AstroContainer } from 'astro/container';
+const container = await AstroContainer.create();
+
+for (const item of area.items) {  
+  const options = {
+    ...item._options,
+    ...widgetOptions[item.type]
+  };
+  const { _options, ...cleanItem } = item;
+  item._rendered = await container.renderToString(AposWidget, {
+    props: {
+      widget: cleanItem,
+      options,
+      ...Astro.props
+    }
+  });
+}
+console.log(`area going back is: ${JSON.stringify(area, null, 2)}`);
+return new Response(JSON.stringify({ area }), {
+  status: 200,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
+function getWidgetOptions(options) {
+  let widgets = options.widgets || {};
+
+  if (options.groups) {
+    for (const group of Object.keys(options.groups)) {
+      widgets = {
+        ...widgets,
+        ...options.groups[group].widgets
+      };
+    }
+  }
+  return widgets;
+}
+
+---
