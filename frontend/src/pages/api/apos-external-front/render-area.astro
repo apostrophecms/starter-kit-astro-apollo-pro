@@ -1,12 +1,14 @@
 ---
+// In certain situations ApostropheCMS must "call back" to Astro for rendered markup,
+// for instance when the render-areas query parameter is used with the
+// ApostropheCMS REST API.
+//
 // This file must exist as a bridge between ApostropheCMS and Astro
 // because Vite won't compile imports of .astro files from a .js file if both of them
 // live in an external module. Otherwise we would ship it as a route in the
-// apostrophe-astro module
+// apostrophe-astro module.
 
-import AposWidget from '@apostrophecms/apostrophe-astro/components/AposWidget.astro';
-import { experimental_AstroContainer as AstroContainer } from 'astro/container';
-import aposRenderArea from '@apostrophecms/apostrophe-astro/lib/aposRenderArea.js';
+import AposRenderAreaForApi from '@apostrophecms/apostrophe-astro/components/AposRenderAreaForApi.astro';
 
-return aposRenderArea({ Astro, AstroContainer, AposWidget });
 ---
+<AposRenderAreaForApi />
