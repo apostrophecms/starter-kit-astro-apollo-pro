@@ -50,7 +50,7 @@
     "@apostrophecms-pro/advanced-permission": "^3.0.4",
     "@apostrophecms-pro/automatic-translation": "^1.4.2",
     "@apostrophecms-pro/doc-template-library": "^2.2.6",
-    "@apostrophecms-pro/section-template-library": "apostrophecms/section-template-library",
+    "@apostrophecms-pro/section-template-library": "1.0.0-beta.2",
     "@apostrophecms-pro/document-versions": "^2.6.0",
     "@apostrophecms-pro/import-export-translation": "^1.0.3",
     "@apostrophecms-pro/palette": "^4.8.1",
@@ -60,7 +60,7 @@
     "@apostrophecms/open-graph": "^1.2.3",
     "@apostrophecms/seo": "^1.3.1",
     "@apostrophecms/vite": "^1.1.0",
-    "apostrophe": "apostrophecms/apostrophe#pro-8343",
+    "apostrophe": "apostrophecms/apostrophe",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
