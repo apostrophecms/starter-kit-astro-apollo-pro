@@ -25,53 +25,15 @@ A production-ready template combining [ApostropheCMS](https://docs.apostrophecms
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [🚀 Getting Started](#-getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Quick Start](#quick-start)
-    - [Alternative: Empty Database Setup](#alternative-empty-database-setup)
   - [🏗️ Project Architecture](#️-project-architecture)
-    - [How It Works](#how-it-works)
-    - [Project Structure](#project-structure)
-    - [For ApostropheCMS Developers](#for-apostrophecms-developers)
-    - [For Astro Developers](#for-astro-developers)
-    - [Routing and Templates](#routing-and-templates)
-    - [Widget Flexibility](#widget-flexibility)
-    - [Configuration Notes](#configuration-notes)
   - [🚀 Pro Modules](#-pro-modules)
   - [💎 Available Pro Modules](#-available-pro-modules)
-    - [🔐 Advanced Permissions](#-advanced-permissions)
-    - [🌍 Translation \& Localization Suite](#-translation--localization-suite)
-    - [🎨 Visual Design \& Customization](#-visual-design--customization)
-    - [🔍 SEO \& Performance Optimization](#-seo--performance-optimization)
-    - [📝 Document Management \& Versioning](#-document-management--versioning)
-    - [👥 User Registration \& Management](#-user-registration--management)
   - [⚡ Getting Started with Pro Modules](#-getting-started-with-pro-modules)
   - [🌟 Features \& Widgets](#-features--widgets)
-    - [Widgets](#widgets)
-    - [Pieces](#pieces)
-    - [Pages](#pages)
   - [🖼️ Image Helper Functions](#️-image-helper-functions)
-    - [Overview](#overview)
-    - [Working with Image Relationships](#working-with-image-relationships)
-    - [Working with Direct Attachments](#working-with-direct-attachments)
-    - [Image Cropping and Sizes](#image-cropping-and-sizes)
-    - [Working with Focal Points](#working-with-focal-points)
-    - [Core Functions Reference](#core-functions-reference)
   - [🖌️ Theming](#️-theming)
-    - [Steps to Customize](#steps-to-customize)
-    - [Example: Overriding Common Variables](#example-overriding-common-variables)
-    - [Full List of Variables](#full-list-of-variables)
-    - [Notes](#notes)
-    - [Troubleshooting](#troubleshooting)
   - [⚙️ Package scripts](#️-package-scripts)
-    - [Root `package.json` scripts](#root-packagejson-scripts)
-    - [Frontend folder scripts](#frontend-folder-scripts)
-    - [Backend folder scripts](#backend-folder-scripts)
   - [🚀 Deploying to production](#-deploying-to-production)
-    - [**Using Apostrophe hosting (Recommended)**](#using-apostrophe-hosting-recommended)
-    - [**Using 3rd-party hosting**](#using-3rd-party-hosting)
-      - [Backend (ApostropheCMS) Deployment](#backend-apostrophecms-deployment)
-      - [Frontend (Astro) Deployment](#frontend-astro-deployment)
-      - [Netlify Deployment Example](#netlify-deployment-example)
   - [🚑 Need Help?](#-need-help)
   - [📚 Learn More](#-learn-more)
   - [Licensing](#licensing)
@@ -412,17 +374,13 @@ This project is more opinionated than some of our other project starter kits. It
 
 ### Widgets
 
-This project provides the core ApostropheCMS widgets, plus seven additional widgets:
+This project provides the core ApostropheCMS widgets, plus five additional widgets:
 
-- Layout
-  - rows-widget: adds rows with varying numbers of columns for responsive content layout
-  - grid-layout-widget: adds custom or predefined CSS grid-based layouts
-- Content
-  - hero-widget: a customizable hero section with options for color gradient, image, or video backgrounds
-  - slideshow-widget: a customizable slideshow widget
-  - accordion-widget: adds an accordion for organizing content into collapsible sections
-  - card-widget: allows for the creation of multiple different customizable card-types
-  - link-widget: adds links that can be styled as text or a highly customizable button
+- hero-widget: a customizable hero section with options for color gradient, image, or video backgrounds
+- slideshow-widget: a customizable slideshow widget
+- accordion-widget: adds an accordion for organizing content into collapsible sections
+- card-widget: allows for the creation of multiple different customizable card-types
+- link-widget: adds links that can be styled as text or a highly customizable button
 
 ### Pieces
 
