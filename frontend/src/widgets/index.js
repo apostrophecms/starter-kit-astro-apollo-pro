@@ -21,7 +21,9 @@ const widgetComponents = {
   'slideshow': SlideshowWidget,
   '@apostrophecms-pro/data-set': DataSetWidget,
   '@apostrophecms/layout': LayoutWidget,
-  '@apostrophecms/layout-column': LayoutColumnWidget
+  '@apostrophecms/layout-column': LayoutColumnWidget,
+  'nested-layout': LayoutWidget,
+  'nested-column': LayoutColumnWidget
 };
 
 export default widgetComponents;
