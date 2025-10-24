@@ -9,6 +9,8 @@ import LinkWidget from './LinkWidget.astro';
 import SlideshowWidget from './SlideshowWidget.astro';
 import RowsWidget from './RowsWidget.astro';
 import DataSetWidget from './DataSetWidget.astro';
+import LayoutWidget from '@apostrophecms/apostrophe-astro/widgets/LayoutWidget.astro';
+import LayoutColumnWidget from '@apostrophecms/apostrophe-astro/widgets/LayoutColumnWidget.astro';
 
 const widgetComponents = {
   '@apostrophecms/rich-text': RichTextWidget,
@@ -21,7 +23,9 @@ const widgetComponents = {
   'link': LinkWidget,
   'slideshow': SlideshowWidget,
   'rows': RowsWidget,
-  '@apostrophecms-pro/data-set': DataSetWidget
+  '@apostrophecms-pro/data-set': DataSetWidget,
+  '@apostrophecms/layout': LayoutWidget,
+  '@apostrophecms/layout-column': LayoutColumnWidget
 };
 
 export default widgetComponents;
