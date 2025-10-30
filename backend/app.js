@@ -147,6 +147,8 @@ export default apostrophe({
 
     '@apostrophecms-pro/document-versions': {},
     '@apostrophecms-pro/doc-template-library': {},
+    '@apostrophecms-pro/section-template-library': {},
+    '@apostrophecms-pro/section-template-tag': {},
     '@apostrophecms-pro/palette': {}
   }
 });
