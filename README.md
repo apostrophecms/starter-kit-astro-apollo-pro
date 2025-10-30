@@ -69,9 +69,6 @@ A production-ready template combining [ApostropheCMS](https://docs.apostrophecms
   - [🚀 Deploying to production](#-deploying-to-production)
     - [**Using Apostrophe hosting (Recommended)**](#using-apostrophe-hosting-recommended)
     - [**Using 3rd-party hosting**](#using-3rd-party-hosting)
-      - [Backend (ApostropheCMS) Deployment](#backend-apostrophecms-deployment)
-      - [Frontend (Astro) Deployment](#frontend-astro-deployment)
-      - [Netlify Deployment Example](#netlify-deployment-example)
   - [🚑 Need Help?](#-need-help)
   - [📚 Learn More](#-learn-more)
   - [Licensing](#licensing)
@@ -105,13 +102,14 @@ To simplify dependency management, this repository includes several root-level s
    npm install
    ```
 
-2. **Load starter content** (optional, but recommended)
+~~2. **Load starter content** (optional, but recommended)~~
 
    ```bash
    npm run load-starter-content
    ```
+  ~~This fetches a starter database and media files. You'll be prompted to set an admin password.~~
 
-   This fetches a starter database and media files. You'll be prompted to set an admin password.
+  ⚠️ **Temporary note:** Until the new Layout Widget reaches a stable release (one full version cycle), the starter content will continue to include both the legacy `grid-layout` and `rows` widgets. These widgets have been removed from the starter kit, so running `npm run load-starter-content` will currently result in errors.
 
 3. **Set up environment variables**
    Both projects need an `APOS_EXTERNAL_FRONT_KEY` environment variable set to the same value for authentication. Open two terminals:
