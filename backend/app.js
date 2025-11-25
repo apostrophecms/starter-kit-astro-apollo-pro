@@ -118,7 +118,7 @@ export default apostrophe({
     'card-widget': {},
     'hero-widget': {},
     'link-widget': {},
-    'slideshow-widget': {},,
+    'slideshow-widget': {},
 
     /*
     ==========================
