@@ -53,7 +53,7 @@
     "@apostrophecms-pro/document-versions": "^2.6.0",
     "@apostrophecms-pro/import-export-translation": "^1.0.3",
     "@apostrophecms-pro/palette": "^4.8.1",
-    "@apostrophecms-pro/section-template-library": "1.0.0-beta.2",
+    "@apostrophecms-pro/section-template-library": "1.0.0",
     "@apostrophecms-pro/seo-assistant": "^1.2.1",
     "@apostrophecms/favicon": "^1.1.3",
     "@apostrophecms/mongodb-snapshot": "^1.1.0",
