@@ -1,3 +1,11 @@
+> [!WARNING]
+> **This repository is deprecated and no longer maintained.**
+>
+> We recommend migrating to one of our actively maintained ApostropheCMS + Astro starter kits:
+>
+> - **[Astro Essentials](https://apostrophecms.com/docs/guide/astro-essentials-overview.html)** — a clean, minimal starting point for ApostropheCMS + Astro projects ([repo](https://github.com/apostrophecms/starter-kit-astro-essentials))
+> - **[Astro Demo](https://apostrophecms.com/docs/guide/astro-demo-overview.html)** — a feature-rich reference implementation ([repo](https://github.com/apostrophecms/astro-public-demo))
+
 # Apollo Pro Template for ApostropheCMS + Astro Integration
 
 > **⚠️ This is the Pro version with paid features**
